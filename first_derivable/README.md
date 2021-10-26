@@ -97,8 +97,6 @@ helm repo add apache-airflow https://airflow.apache.org
 ```
 Then we need to update the file  `airflow-values.yaml` and add the information of the github repo and the dags folder.
 
-Lessons learned: Be careful in the github repositorie, you need to copy it like a clone
-
 Then we install the airflow chart from the repository
 
 ```bash
