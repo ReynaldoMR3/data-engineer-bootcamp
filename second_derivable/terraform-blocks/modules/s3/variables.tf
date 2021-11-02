@@ -11,7 +11,7 @@ variable "versioning" {
 }
 
 variable "subnet_s3" {
-  description = "Networking subnets"
+  type = string
 }
 
 variable "vpc_id_s3" {

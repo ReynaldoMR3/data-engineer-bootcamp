@@ -118,4 +118,9 @@ And now we can see the service up and running!
 
 ![airflow-flower](images/airflow-flower.png)
 
+Lesson learned: use the following command to see the pods: kubectl get pods -n airflow
+
+
 Lessons learned: Initialize the airflow service using kubectl and helm.
+
+Lessons learned: To log into the kubernetes bash terminal use the following: kubectl exec -ti airflow-scheduler-nnn-nnn -- /bin/bash (You need to know first the correct name of your airflow scheduler, you can find the name using the get pods command above)
