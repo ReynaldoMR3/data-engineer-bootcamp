@@ -25,10 +25,11 @@ Then follow this steps:
 
 1. Go to the link https://airflow.apache.org/docs/apache-airflow-providers-amazon/stable/_modules/airflow/providers/amazon/aws/transfers/s3_to_redshift.html#AVAILABLE_METHODS
 
-This will help us create our s3 to postgress operator, so we are copying the source code of the operator s3 to redshift.
+    (This will help us create our s3 to postgress operator, so we are copying the source code of the operator s3 to redshift.
+    )
 
-Lesson learned: Start building from a similar solution.
-Lesson learned: Make sure you are seeing the docs version from the version you are using.
+    Lesson learned: Start building from a similar solution.
+    Lesson learned: Make sure you are seeing the docs version from the version you are using.
 
 2. Copy all the code that's on the link and paste it in a new .py file, for this example the code will be on custom_modules/transfer_s3_to_postgres.py
 
@@ -38,7 +39,13 @@ Lesson learned: Make sure you are seeing the docs version from the version you a
 
 
 
+Lesson to learn: logs are not showing correctly
 
+
+#TODO: DEBUG Failed DAG
+
+
+![failed-dag](../first_derivable/images/airflow-failed-dag.png)
 
 
 
