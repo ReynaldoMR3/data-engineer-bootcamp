@@ -20,6 +20,7 @@ dag = DAG('dag_read_s3_data', default_args=default_args, schedule_interval='@onc
 process_data = S3ToPotsgresOperator(
     task_id = 'dag_s3_to_postgres',
     schema = 'airflow_metadata',
+    table = 'user_purchase',
     s3_bucket = 'second-derivable20211101213449672200000001',
     s3_key = 'user_purchase.csv',
     dag=dag
