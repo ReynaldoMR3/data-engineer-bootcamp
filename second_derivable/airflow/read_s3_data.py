@@ -7,7 +7,7 @@ from custom_modules.transfer_s3_to_postgres import S3ToPotsgresOperator
 default_args = {
     'owner' : 'reynaldo.mendez',
     'depends_on_past' : False,
-    'start_date' : airflow.utils.dates.day_ago(1),
+    'start_date' : airflow.utils.dates.days_ago(1),
     'email' : ["reynaldomendezr3@gmail.com"],
     'email_on_failure' : True,
     'email_on_retry' : True,
