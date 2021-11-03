@@ -25,7 +25,7 @@ dags:
     maxFailures: 0
     # subpath within the repo where dags are located
     # should be "" if dags are at repo root
-    subPath: "first_derivable/airflow/"
+    subPath: "second_derivable/airflow/"
 
 
 logs:
@@ -36,3 +36,5 @@ logs:
     size: 1Gi
     # If using a custom storageClass, pass name here
     storageClassName: nfs-client
+
+webserverSecretKey: acc55df2017144a96e98d67906ebfe39
