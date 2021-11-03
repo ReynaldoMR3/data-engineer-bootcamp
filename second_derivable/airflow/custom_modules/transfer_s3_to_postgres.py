@@ -61,7 +61,7 @@ class S3ToPotsgresOperator(BaseOperator):
         self.postgres_conn_id = postgres_conn_id
         self.aws_conn_id = aws_conn_id
         self.verify = verify
-        self.wildcard_match = wildcard_match
+        self.wildcard_match = wilcard_match
         self.column_list = column_list
         self.copy_options = copy_options or []
         self.autocommit = autocommit
