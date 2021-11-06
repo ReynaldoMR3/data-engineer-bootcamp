@@ -36,5 +36,3 @@ logs:
     size: 1Gi
     # If using a custom storageClass, pass name here
     storageClassName: nfs-client
-
-webserverSecretKey: acc55df2017144a96e98d67906ebfe39
