@@ -29,7 +29,7 @@ def read_postgres_data():
     return sources
 
 with DAG(
-    dag_id='postgres_create_extension',
+    dag_id='s3_to_postgres_tasks',
     default_args=default_args,
     schedule_interval='@once'
 ) as dag:
@@ -52,7 +52,7 @@ with DAG(
                     detail varchar(1000),
                     quantity int,
                     invoice_date timestamp,
-                    unit_price numberic(8,3),
+                    unit_price numeric(8,3),
                     customer_id int,
                     country varchar(20)
                 );
