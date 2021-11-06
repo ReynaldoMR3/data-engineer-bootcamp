@@ -28,6 +28,7 @@ def read_postgres_data():
         print(f"{source}")
     return sources
 
+
 with DAG(
     dag_id='s3_to_postgres_tasks',
     default_args=default_args,
@@ -58,11 +59,12 @@ with DAG(
                 );
           """
     )
+
     populate_table = PostgresOperator(
         task_id="populate_users_tables",
         postgres_conn_id='postgres_default',
         sql="""
-            SELECT aws_s3.table_import_from_s3('user_purchase', '', '(format csv)', 'second-derivable20211101213449672200000001', 'user_purchase.csv', 'us-east-2');
+            SELECT aws_s3.table_import_from_s3('user_purchase', '', '(format csv)', 's3://second-derivable20211101213449672200000001/user_purchase.csv');
           """
     )
     read_data = PythonOperator(task_id='read_data', python_callable=read_postgres_data)
