@@ -25,7 +25,7 @@ with DAG(
 ) as dag:
     create_postgres_extension = PostgresOperator(
         task_id="create_aws_s3_extension",
-        postgress_conn_id='postgres_default',
+        postgres_conn_id='postgres_default',
         sql="""
             CREATE EXTENSION aws_s3 CASCADE;
           """
