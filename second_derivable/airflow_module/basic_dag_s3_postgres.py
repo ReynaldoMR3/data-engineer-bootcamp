@@ -44,7 +44,7 @@ with DAG(
         task_id="create_users_tables",
         postgres_conn_id='postgres_default',
         sql="""
-            CREATE TABLE IF NOT EXISTS airflow_metadata.user_purchase 
+            CREATE TABLE IF NOT EXISTS user_purchase 
                 (
                     id SERIAL PRIMARY KEY,
                     invoice_number varchar(10),
