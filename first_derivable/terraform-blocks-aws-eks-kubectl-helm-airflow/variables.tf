@@ -100,6 +100,16 @@ variable "bucket_prefix" {
   type        = string
 }
 
+variable "bucket_raw_prefix" {
+  description = "A prefix will be added to a random name"
+  type        = string
+}
+
+variable "bucket_staging_prefix" {
+  description = "A prefix will be added to a random name"
+  type        = string
+}
+
 variable "acl" {
   description = "Access Control List"
   type        = string
@@ -139,4 +149,9 @@ variable "asg_desired_capacity_group1" {
 variable "asg_desired_capacity_group2" {
   default     = 1
   description = "Desired capacity for autoscaling for the group 2"
+}
+
+variable "iam_user" {
+  default = "iam-user"
+  description = "name of the iam user"
 }

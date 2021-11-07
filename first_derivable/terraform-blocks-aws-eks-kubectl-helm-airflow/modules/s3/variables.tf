@@ -2,6 +2,18 @@ variable "bucket_prefix" {
   type = string
 }
 
+variable "bucket_raw_prefix" {
+  type = string
+}
+
+variable "bucket_staging_prefix" {
+  type = string
+}
+
+variable "iam_user" {
+  type = string
+}
+
 variable "acl" {
   type = string
 }

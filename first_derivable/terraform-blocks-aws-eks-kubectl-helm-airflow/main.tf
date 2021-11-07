@@ -60,6 +60,9 @@ module "s3" {
    vpc_id_s3   = module.networking.vpc_id
    subnet_s3 = module.networking.private_subnets_ids
    bucket_prefix = var.bucket_prefix
+   bucket_staging_prefix = var.bucket_staging_prefix
+   bucket_raw_prefix = var.bucket_raw_prefix
+   iam_user = var.iam_user
    acl           = var.acl
    versioning    = var.versioning
  }
