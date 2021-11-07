@@ -26,7 +26,6 @@ def read_postgres_data():
     sources = cursor.fetchall()
     for source in sources:
         print(f"{source}")
-    return sources
 
 
 with DAG(
