@@ -64,7 +64,7 @@ with DAG(
         task_id="populate_users_tables",
         postgres_conn_id='postgres_default',
         sql="""
-            SELECT aws_s3.table_import_from_s3('user_purchase', '(id, invoice_number, stock_code, detail, quantity, invoice_date, unit_price, customer_id, country)', '(FORMAT CSV, DELIMITER '','', HEADER true, QUOTE ''"'' )', aws_commons.create_s3_uri('second-derivable20211101213449672200000001', 'user_purchase.csv', 'us-east-2') );
+            SELECT aws_s3.table_import_from_s3('user_purchase', '('id', 'invoice_number', 'stock_code', 'detail', 'quantity', 'invoice_date', 'unit_price', 'customer_id', 'country')', '(FORMAT CSV, DELIMITER '','', HEADER true, QUOTE ''"'' )', aws_commons.create_s3_uri('second-derivable20211101213449672200000001', 'user_purchase.csv', 'us-east-2') );
           """
     )
     read_data = PythonOperator(task_id='read_data', python_callable=read_postgres_data)
