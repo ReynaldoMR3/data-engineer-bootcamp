@@ -17,35 +17,37 @@ To start you must follow the steps on the first derivable to start the airflow s
 Important: Change the values.yaml on the first derivable project with this github repo path to use the .py files as dags
 
 
-##### TODO: FINISH IAM MODULE
-
 Lesson Learned: Don't waste to much time learning terraform if you don't want to be a SRE.
 
 Then follow this steps:
 
-1. Go to the link https://airflow.apache.org/docs/apache-airflow-providers-amazon/stable/_modules/airflow/providers/amazon/aws/transfers/s3_to_redshift.html#AVAILABLE_METHODS
+1. Setup connections with the airflow UI interface.
 
-    (This will help us create our s3 to postgress operator, so we are copying the source code of the operator s3 to redshift.
-    )
+2. Setup IAM roles and policies need for S3 and postgress communication. (Made manually using the AWS Webpage)
 
-    Lesson learned: Start building from a similar solution.
-    Lesson learned: Make sure you are seeing the docs version from the version you are using.
+6. Go to the airflow-ui and set the s3_to_postgres_tasks DAG to unpaused.
 
-2. Copy all the code that's on the link and paste it in a new .py file, for this example the code will be on custom_modules/transfer_s3_to_postgres.py
+7. Click on the name to see the tree view and check everything is working. 
+![airflow-treeview](images/af-treeview.png)
 
-3. Adapt the code we just copy to our needs. # TODO: Test pandas.Dataframe.to_sql() using the connection uri from airflow connections.
+8. Enjoy and see the log with the result.
+![airflow-treeview](images/af-log.png)
 
-4. Setup connections with the airflow UI interface. ### TODO: test IAM role and read Eiffel documentation that he shared.
-
-
-
-Lesson to learn: logs are not showing correctly
+9. terraform destroy
 
 
-#TODO: DEBUG Failed DAG
+Lesson's learned, 
+1. we need to delete the s3 files in order for terraform to destroy the S3 Buckets.
+2. You can create an aws s3 extension to copy data directly from s3.
+3. To use seria id with a copy statement from a file you need to specify the columns that the file has.
+4. Eiffel put a lot of commas on the csv files be careful with people that want's to watch the world burn. (JK he's a great mentor :D)
 
 
-![failed-dag](../first_derivable/images/airflow-failed-dag.png)
+TODO's:
+- Finish IAM module with terraform.
+- Read more about STS tokens for security practices.
+- Fully automate the data pipeline.
+- Create function that sends local files to S3.
 
 
 
