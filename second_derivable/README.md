@@ -27,7 +27,8 @@ Then follow this steps:
 
 6. Go to the airflow-ui and set the s3_to_postgres_tasks DAG to unpaused.
 
-7. Click on the name to see the tree view and check everything is working. 
+7. Click on the name to see the tree view and check everything is working.
+ 
 ![airflow-treeview](images/af-treeview.png)
 
 8. Enjoy and see the log with the result.
