@@ -41,4 +41,9 @@ Your mentor will post the feedback comments on your mentoring session. For refer
 
 We are going to use the first and second derivable folders to continue using the infrastructure created with terraform, in the first module we added new modules containing new s3 buckets, emr and iam modules.
 
-In the secon derivable we are storing all the dags and spark jobs that will be used.
+In the second derivable folder we are storing all the dags and spark jobs that will be used.
+
+For the first task Read your PostgreSQL table and write the data in your Staging Layer we are using a new python file called postgresToS3.py
+
+
+
