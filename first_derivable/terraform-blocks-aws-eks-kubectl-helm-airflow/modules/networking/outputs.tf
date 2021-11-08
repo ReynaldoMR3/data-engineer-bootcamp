@@ -6,6 +6,10 @@ output "vpc_cidr_block" {
   value = var.vpc_cidr
 }
 
+output "cidr_block" {
+  value = aws_vpc.vpc.cidr_block
+}
+
 output "public_subnets_route_table_id" {
   value = aws_route_table.public.id
 }
@@ -32,4 +36,12 @@ output "internet_gateway_id" {
 
 output "availability_zone" {
   value = var.availability_zone
+}
+
+output "aws_security_group_id" {
+  value = aws_security_group.default.id
+}
+
+output "aws_subnet_public_subnet"{
+  value = aws_subnet.public_subnet
 }

@@ -66,3 +66,7 @@ module "s3" {
    acl           = var.acl
    versioning    = var.versioning
  }
+
+module "emr" {
+  source = "./modules/emr"
+}
