@@ -31,25 +31,12 @@ with DAG(
           """
     )
 
-    s3_uri_generator = PostgresOperator(
-        task_id="s3_uri_generator",
-        postgres_conn_id='postgres_default',
-        sql="""
-            SELECT aws_commons.create_s3_uri(
-            'staging',
-            'user_purchase',
-            'us-east-2'
-            ) AS s3_uri_1
-          """
-    )
-
     export_table_to_s3 = PostgresOperator(
         task_id="postgres_to_s3",
         postgres_conn_id='postgres_default',
         sql="""
            SELECT *
-           FROM aws_s3.query_export_to_s3(
-           'SELECT * FROM user_purchase',:'s3_uri_1');  
+           FROM aws_s3.query_export_to_s3('SELECT * FROM user_purchase', create_s3_uri('staging', 'user_purchase','us-east-2'));  
           """
     )
 
@@ -60,7 +47,7 @@ with DAG(
     delimiter='/',
     aws_conn_id='default_aws_conn'
     )
-    create_postgres_extension >> s3_uri_generator >> export_table_to_s3 >> s3_file
+    create_postgres_extension >> export_table_to_s3 >> s3_file
     
 
 
