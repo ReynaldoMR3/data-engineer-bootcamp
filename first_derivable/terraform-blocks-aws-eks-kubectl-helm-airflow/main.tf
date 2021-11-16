@@ -67,6 +67,13 @@ module "s3" {
    versioning    = var.versioning
  }
 
-module "emr" {
-  source = "./modules/emr"
-}
+
+# removing emr, let's try glue
+#module "emr" {
+#  source = "./modules/emr"
+#  public_subnets_ids = module.networking.public_subnets_ids
+#  aws_security_group_id=module.networking.aws_security_group_id
+#  vpc_id = module.networking.vpc_id
+#  aws_subnet = module.networking.aws_subnet_public_subnet
+#  cidr_block = module.networking.cidr_block
+#}
