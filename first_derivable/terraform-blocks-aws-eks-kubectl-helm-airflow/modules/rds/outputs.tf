@@ -18,3 +18,12 @@ output "rds_username" {
   value       = aws_db_instance.rds-instance.username
   sensitive   = true
 }
+
+output "rds_security_group" {
+  description = "rds security group name"
+  value = aws_security_group.rds_sg.name
+}
+
+output "rds_instance_id" {
+  value = aws_db_instance.rds-instance.id
+}

@@ -16,6 +16,7 @@ variable "iam_user" {
 
 variable "acl" {
   type = string
+  default = "False"
 }
 
 variable "versioning" {

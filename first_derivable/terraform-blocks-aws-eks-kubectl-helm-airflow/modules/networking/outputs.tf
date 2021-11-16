@@ -45,3 +45,7 @@ output "aws_security_group_id" {
 output "aws_subnet_public_subnet"{
   value = aws_subnet.public_subnet
 }
+
+output "aws_security_group_name" {
+  value = aws_security_group.default.name
+}

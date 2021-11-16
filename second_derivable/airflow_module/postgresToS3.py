@@ -39,7 +39,7 @@ with DAG(
             'staging',
             'user_purchase',
             'us-east-2'
-            ) AS s3_uri_1 \gset
+            ) AS s3_uri_1
           """
     )
 

@@ -68,6 +68,16 @@ module "s3" {
  }
 
 
+module "iam" {
+  source = "./modules/iam"
+  iam_user = var.iam_user
+  s3_bucket_arn = module.s3.s3_bucket_arn
+  s3_raw_bucket_arn = module.s3.s3_raw_bucket_arn
+  s3_staging_bucket_arn = module.s3.s3_staging_bucket_arn
+  rds_instance = module.rds.rds_instance_id
+  default_security_group = module.networking.aws_security_group_name
+}
+
 # removing emr, let's try glue
 #module "emr" {
 #  source = "./modules/emr"
