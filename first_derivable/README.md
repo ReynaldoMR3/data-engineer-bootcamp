@@ -64,7 +64,7 @@ kubectl create namespace storage
 
 And we will receive a message that the namespace is created
 
-Then we use helm to add a heml chart to the nsf-provider
+Then we use helm to add a heml chart to the nsf-provider (Second runs requires to execute helm repo remove)
 ```bash
 helm repo add nfs-subdir-external-provisioner https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner/
 ```

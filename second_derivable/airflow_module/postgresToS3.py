@@ -3,8 +3,8 @@ from airflow import DAG
 import airflow.utils.dates
 from airflow.operators.python_operator import PythonOperator
 from datetime import datetime, timedelta
-from airflow.hooks.postgres_hook import PostgresHook
 from airflow.providers.amazon.aws.operators.s3_list import S3ListOperator
+from airflow.providers.postgres.operators.postgres import PostgresOperator
 
 
 default_args = {
@@ -59,7 +59,10 @@ with DAG(
     prefix='',
     delimiter='/',
     aws_conn_id='default_aws_conn'
-)
+    )
+    create_postgres_extension >> s3_uri_generator >> export_table_to_s3 >> s3_file
+    
+
 
 
 
