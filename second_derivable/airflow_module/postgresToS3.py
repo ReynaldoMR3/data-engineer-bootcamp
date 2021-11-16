@@ -19,7 +19,7 @@ default_args = {
 } 
 
 with DAG(
-    dag_id='s3_to_postgres_tasks',
+    dag_id='postgres_to_s3_tasks',
     default_args=default_args,
     schedule_interval='@once'
 ) as dag:
