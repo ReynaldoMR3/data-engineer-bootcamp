@@ -45,5 +45,40 @@ In the second derivable folder we are storing all the dags and spark jobs that w
 
 For the first task Read your PostgreSQL table and write the data in your Staging Layer we are using a new python file called postgresToS3.py
 
+So the steps for the datapipeline to work are the following:
 
+Run all the steps on the readme.md on the first_derivable folder to initialize all the insfraestructure needed.
+
+Set the airflow connections.
+TODO: find a way to pass the rds connection and aws connection from terraform to airflow
+
+Unpause the DAG s3_to_postgres_tasks
+
+TODO: find a way to activate postgres_to_s3_tasks after s3_to_postgres tasks finishes
+
+Unpause the DAG postgres_to_s3_tasks
+
+
+Steps with GLUE for ETL:
+
+ Manual way:
+ 1. Go to aws glue
+ 2. Create a crawler (connects to the aws bucket nd creates metadata tables in the data catalog)
+ 3. Give the crawler a name
+ 4. Choose a data store
+ 5. Include s3 path for the raw layer
+ 6. Create iam role - policy - attach role policy
+ 7. Select in the schedule option the run on demand option.
+ 8. Configure the crawler's output (database needed for glue crawler)
+ 9. Create job
+ 10. Give a name to the job
+ 11. Choose the iam role, type spark and glue version
+ 12. Edit glue job, found the script on the folder scripts
+ 13. Run job and wait for the parquet files to appear on the staging layer
+
+
+ ![staging-layer](images/staging-parquet.png)
+
+
+TODO: Terraform module with Glue steps
 

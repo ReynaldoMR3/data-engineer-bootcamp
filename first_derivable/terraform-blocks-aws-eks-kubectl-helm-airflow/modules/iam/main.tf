@@ -67,6 +67,9 @@ resource "aws_iam_role" "rds_role_export" {
 }
 EOF
 }
+ 
+
+
 
 resource "aws_iam_policy_attachment" "policy-attach" {
   name       = "policy-attachment"
@@ -87,5 +90,5 @@ resource "aws_db_instance_role_association" "rds-role-attach" {
 resource "aws_db_instance_role_association" "rds-role-attach-export" {
   db_instance_identifier = var.rds_instance
   feature_name           = "s3Export"
-  role_arn               = aws_iam_role.rds_role.arn
+  role_arn               = aws_iam_role.rds_role_export.arn
 }
