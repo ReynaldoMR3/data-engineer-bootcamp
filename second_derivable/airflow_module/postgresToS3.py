@@ -36,7 +36,7 @@ with DAG(
         postgres_conn_id='postgres_default',
         sql="""
            SELECT *
-           FROM aws_s3.query_export_to_s3('SELECT * FROM user_purchase', aws_commons.create_s3_uri('staging20211120201523566000000005', 'user_purchase.csv','us-east-2'));  
+           FROM aws_s3.query_export_to_s3('SELECT * FROM user_purchase', aws_commons.create_s3_uri('staging20211120201523566000000005', 'user_purchase.parquet','us-east-2'));  
           """
     )
 
