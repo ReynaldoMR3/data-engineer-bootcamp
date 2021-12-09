@@ -36,3 +36,15 @@ What has been listed in this deliverable is just for guidance and to help you di
 Your mentor will post the feedback comments on your mentoring session. For reference, take a look at the DE Bootcamp calendar.
 
 ## TODO : add airflow and terraform steps to the repo.
+
+STEPS:
+1. Create glue crawler for the staging tables
+2. Create table for the user behavior metrics
+3. Insert into the table the calculated metrics
+4. Enjoy
+
+![airflow-ui](images/dwh_table.png)
+
+
+Lessons learned: Take care of the time and organize better.
+
