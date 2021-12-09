@@ -1,0 +1,8 @@
+CREATE EXTERNAL TABLE IF NOT EXISTS user_behaviour_metric(
+  customerid INTEGER,
+  amount_spent DECIMAL(18,5),
+  review_score INTEGER,
+  review_count INTEGER,
+  insert_date DATE
+)
+LOCATION 's3://staging20211120201523566000000005/'

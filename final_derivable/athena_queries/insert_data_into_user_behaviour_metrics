@@ -1,0 +1,9 @@
+INSERT INTO "user_behaviour_metric"
+SELECT cast(col7 as integer) AS customerid,
+	cast(SUM(col4 * col6) as decimal(18,5)) AS amount_spent,
+	cast(SUM(positive_review) as integer) AS review_score,
+	cast(COUNT(cid) as integer ) AS review_count,
+	current_date as insert_date
+FROM postgres
+	LEFT JOIN positive_reviews ON cast(postgres.col7 AS bigint) = positive_reviews.cid
+GROUP BY col7;

@@ -8,7 +8,6 @@ In case of some difficulties, take advantage of templates provided by Wizeline t
 Take your notes about any blocker and your lessons learned to be discussed during Q&A and Mentoring sessions.
 
 
-
 Outcome:
 Terraform blocks to build and run your Airflow Cluster.
 (Optional) Automation process to run Terraform blocks as part of the main Data Pipeline
